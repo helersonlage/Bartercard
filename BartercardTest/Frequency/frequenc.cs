@@ -1,6 +1,6 @@
 ﻿namespace BartercardTest.Sort
 {
-    public class frequency
+    public class frequency : Ifrequency
     {
         public frequency(int _num, int _freq)
         {
@@ -8,7 +8,7 @@
             freq = _freq;
         }
 
-        public int num { get; }
-        public int freq { get; }
+         public int num { get; }
+         public int freq { get; }
     }
 }

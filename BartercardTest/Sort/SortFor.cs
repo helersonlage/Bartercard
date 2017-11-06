@@ -15,7 +15,7 @@ namespace BartercardTest.Sort
             List<frequency> lst = new List<frequency>();
             frequency frq;
 
-            var sorted = array.OrderBy(a => a).AsParallel().ToArray();
+            var sorted = array.OrderBy(a => a).ToArray();
             for (int i = 0; i < sorted.Length; i++)
             {
                 if (!(i > 0) || (sorted[i] != sorted[i - 1]))
@@ -24,11 +24,12 @@ namespace BartercardTest.Sort
                     frq = new frequency(sorted[i], sorted.Count(a => a.Equals(sorted[i])));
                     lst.Add(frq);
 
+
                 }
             }
 
             //Sort
-            var print = lst.AsParallel().OrderBy(a => a.freq).ThenBy(b => b.num).ToList();
+            var print = lst.OrderBy(a => a.freq).ThenBy(b => b.num).ToList();
 
             return print;
 

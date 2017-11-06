@@ -14,7 +14,7 @@ namespace BartercardTest.Sort
         /// <returns></returns>
         public override List<frequency> CustonSort(int[] array)
         {
-            var print = array.GroupBy(c => c).Select(a => new frequency(a.Key, a.Count()))
+            var print = array.GroupBy(c => c).Select(a =>  new frequency(a.Key, a.Count()))
                  .OrderBy(a => a.freq).ThenBy(b => b.num).ToList();
             return print;
         }
